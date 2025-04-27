@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        
+            <nav>
+                <div class="container">
+                <div class="logo-container">
+                    <img src="gov.svg" alt="Government Logo" class="logo">
+                    <h1 style="color:white">Government Portal</h1>
+                </div>   
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="container">
+                <h2>Welcome to the Official Government Portal</h2>
+                <p>Access government services and information efficiently</p>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-card" data-modal="documents-modal">
+                        <h3>Document Applications</h3>
+                        <p>Apply for official documents such as passport, ID card, or birth certificate</p>
+                        <span class="card-link">Learn More →</span>
+                    </div>
+                    <div class="service-card" data-modal="records-modal">
+                        <h3>Public Records</h3>
+                        <p>Access property, business, and court records</p>
+                        <span class="card-link">Learn More →</span>
+                    </div>
+                    <div class="service-card" data-modal="payments-modal">
+                        <h3>Online Payments</h3>
+                        <p>Pay your taxes, fines, and service fees</p>
+                        <span class="card-link">Learn More →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Improved Modal Structure -->
+    <div id="documents-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Document Applications</h3>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="service-form" id="document-form">
+                    <div class="form-group">
+                        <label for="doc-type">Document Type:</label>
+                        <select id="doc-type" required>
+                            <option value="">Select document type</option>
+                            <option value="passport">Passport</option>
+                            <option value="id-card">ID Card</option>
+                            <option value="birth-cert">Birth Certificate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="full-name">Full Name:</label>
+                        <input type="text" id="full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                    <button type="submit">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="records-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Public Records</h3>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="service-form" id="records-form">
+                    <div class="form-group">
+                        <label for="record-type">Record Type:</label>
+                        <select id="record-type" required>
+                            <option value="">Select record type</option>
+                            <option value="property">Property Records</option>
+                            <option value="business">Business Records</option>
+                            <option value="court">Court Records</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="record-id">Record ID/Reference:</label>
+                        <input type="text" id="record-id">
+                    </div>
+                    <div class="form-group">
+                        <label for="request-details">Request Details:</label>
+                        <textarea id="request-details" rows="3"></textarea>
+                    </div>
+                    <button type="submit">Request Record</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="payments-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Online Payments</h3>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="service-form" id="payments-form">
+                    <div class="form-group">
+                        <label for="payment-type">Payment Type:</label>
+                        <select id="payment-type" required>
+                            <option value="">Select payment type</option>
+                            <option value="tax">Taxes</option>
+                            <option value="fine">Fines</option>
+                            <option value="fee">Service Fees</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reference">Reference Number:</label>
+                        <input type="text" id="reference" required>
+                    </div>
+                    <button type="submit">Proceed to Payment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Government Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <div id="submit-confirmation" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #4CAF50; color: white; padding: 16px; border-radius: 4px; z-index: 1000; animation: slideIn 0.5s ease-out">
+        Form submitted successfully!
+    </div>
+
+    <style>
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</body>
+</html>
+
+
+
